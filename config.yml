@@ -1,5 +1,5 @@
 baseUrl: "https://x1pen9chen.com/"
-languageCode: en-us
+languageCode: en
 title: x1pen9chen
 theme: PaperMod
 
@@ -12,10 +12,28 @@ enableEmoji: true
 pygmentsUseClasses: true
 mainsections: ["posts", "papermod"]
 
+menu:
+  main:
+    - name: Posts
+      url: posts
+      weight: 5
+    - name: Archive
+      url: archives
+      weight: 5
+    - name: Search
+      url: search/
+      weight: 10
+    - name: Tags
+      url: tags/
+      weight: 10
+    - name: About
+      url: about/
+
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-  author: Theme PaperMod
+  description: ""
+  author: x1pen9chen
   # author: ["Me", "You"] # multiple authors
 
   defaultTheme: auto
@@ -35,24 +53,25 @@ params:
   images: ["images/cover/甲陽園駅2.jpg"]
 
 
+
   profileMode:
     enabled: true
-    title: "1" # optional default will be site title
-    subtitle: "welcome"
+    title: "" # optional default will be site title
+    subtitle: "为世界上所有的美好而战"
     imageUrl: "" # optional
     imageTitle: "" # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
     buttons:
-      - name: Archive
-        url: "/archive"
-      - name: Github
-        url: "https://github.com/"
-
+      - name: 光翼展开
+        url: archives
+        audio: "/audio/毕业旅行.mp3"  
   socialIcons: # optional
-    - name: "social inc"
-      url: ""
- 
+    - name: "bilibili"
+      url: "https://space.bilibili.com/144982222"
+  
+
+
 outputs:
   home:
     - HTML
