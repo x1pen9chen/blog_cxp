@@ -1,4 +1,60 @@
-baseUrl: "http://x1pen9chen.com/"
-languageCode: zh-cn
+baseUrl: "https://x1pen9chen.com/"
+languageCode: en-us
 title: x1pen9chen
 theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["posts", "papermod"]
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+  author: Theme PaperMod
+  # author: ["Me", "You"] # multiple authors
+
+  defaultTheme: auto
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  # comments: false
+  images: ["images/cover/甲陽園駅2.jpg"]
+
+
+  profileMode:
+    enabled: true
+    title: "1" # optional default will be site title
+    subtitle: "welcome"
+    imageUrl: "" # optional
+    imageTitle: "" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: Archive
+        url: "/archive"
+      - name: Github
+        url: "https://github.com/"
+
+  socialIcons: # optional
+    - name: "social inc"
+      url: ""
+ 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
