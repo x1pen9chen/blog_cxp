@@ -1,0 +1,10 @@
+<div id="waline-comments"></div>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<script>
+  Waline.init({
+    el: '#waline-comments',
+    serverURL: '{{ .Site.Params.waline.serverURL }}',
+    anonymous: '{{ .Site.Params.waline.anonymous }}',
+    requiredFields: '{{ .Site.Params.waline.requiredFields }}',
+  });
+</script>

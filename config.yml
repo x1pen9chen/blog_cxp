@@ -1,16 +1,17 @@
 baseUrl: "https://x1pen9chen.com/"
+#  http://localhost:1313/  https://x1pen9chen.com/
 languageCode: en
 title: x1pen9chen
 theme: PaperMod
 
-enableInlineShortcodes: true
-enableRobotsTXT: true
-buildDrafts: false
-buildFuture: false
-buildExpired: false
-enableEmoji: true
-pygmentsUseClasses: true
-mainsections: ["posts", "papermod"]
+#enableInlineShortcodes: true
+#enableRobotsTXT: true
+#buildDrafts: false
+#buildFuture: false
+#buildExpired: false
+#enableEmoji: true
+#pygmentsUseClasses: true
+#mainsections: ["posts", "papermod"]
 
 menu:
   main:
@@ -38,40 +39,61 @@ params:
 
   defaultTheme: auto
   # disableThemeToggle: true
-  ShowShareButtons: true
-  ShowReadingTime: true
+  #ShowShareButtons: true
+  #ShowReadingTime: true
   # disableSpecial1stPost: true
-  displayFullLangName: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowRssButtonInSectionTermList: true
-  ShowAllPagesInArchive: true
-  ShowPageNums: true
-  ShowToc: true
+  #displayFullLangName: true
+  #ShowPostNavLinks: true
+  #ShowBreadCrumbs: true
+  #ShowCodeCopyButtons: true
+  #ShowRssButtonInSectionTermList: true
+  #ShowAllPagesInArchive: true
+  #ShowPageNums: true
+  #ShowToc: true
   # comments: false
-  images: ["images/cover/甲陽園駅2.jpg"]
-
+  # images: ["images/cover/甲陽園駅2.jpg"]
 
 
   profileMode:
     enabled: true
     title: "" # optional default will be site title
-    subtitle: "为世界上所有的美好而战"
-    imageUrl: "" # optional
-    imageTitle: "" # optional
+    subtitle: 为世界上所有的美好而战
+    imageUrl: images/头像_琪亚娜_圣女祈祷.png # optional
+    imageTitle: "琪亚娜 圣女祈祷" # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
     buttons:
       - name: 光翼展开
         url: archives
-        audio: "/audio/毕业旅行.mp3"  
+        audio: /audio/芽衣_你就是我的舰长吗.mp3
   socialIcons: # optional
-    - name: "bilibili"
-      url: "https://space.bilibili.com/144982222"
-  
+    - name: bilibili
+      url: https://space.bilibili.com/144982222
 
 
+  comments:
+    enabled: true
+    provider: "waline"
+    waline:
+      serverURL: "https://waline-alpha-lac.vercel.app"  # 替换为你的地址
+      anonymous: true                      # 允许匿名
+      requiredFields: ["nick"]             # 仅昵称
+      imageUploader: true                  # 开启图片上传
+      search: false                        # 禁用搜索
+      pageSize: 10                         # 每页评论数
+      meta: ["nick"]       # 显示字段
+      #emoji: ["https://cdn.jsdelivr.net/npm/@waline/emojis@latest/bmoji/"]
+      wordLimit: 500
+
+# 启用 Hugo 资源处理
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: static
+      target: static
+
+# 启用搜索
 outputs:
   home:
     - HTML

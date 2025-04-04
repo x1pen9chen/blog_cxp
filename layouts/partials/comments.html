@@ -1,0 +1,37 @@
+{{- /* Comments area start */ -}}
+{{- /* to add comments read => https://gohugo.io/content-management/comments/ */ -}}
+{{- /* Comments area end */ -}}
+
+{{ if eq .Site.Params.comments.provider "giscus" }}
+  <div class="giscus-comments">
+    <script src="https://giscus.app/client.js"
+      data-repo="{{ .Site.Params.comments.giscus.repo }}"
+      data-repo-id="{{ .Site.Params.comments.giscus.repoId }}"
+      data-category="{{ .Site.Params.comments.giscus.category }}"
+      data-category-id="{{ .Site.Params.comments.giscus.categoryId }}"
+      data-mapping="{{ default "pathname" .Site.Params.comments.giscus.mapping }}"
+      data-strict="{{ default "1" .Site.Params.comments.giscus.strict }}"
+      data-reactions-enabled="{{ default "1" .Site.Params.comments.giscus.reactions }}"
+      data-emit-metadata="{{ default "0" .Site.Params.comments.giscus.metadata }}"
+      data-input-position="{{ default "bottom" .Site.Params.comments.giscus.inputPosition }}"
+      data-theme="{{ default "preferred_color_scheme" .Site.Params.comments.giscus.theme }}"
+      data-lang="{{ default "en" .Site.Params.comments.giscus.lang }}"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+{{ end }}
+
+{{ if eq .Site.Params.comments.provider "waline" }}
+  <div id="waline-comments"></div>
+  <script src="https://unpkg.com/@waline/client@2/dist/waline.js"></script>
+  <script>
+    Waline.init({
+      el: '#waline-comments',
+      serverURL: '{{ .Site.Params.comments.waline.serverURL }}',
+      anonymous: '{{ .Site.Params.comments.waline.anonymous }}',
+      requiredFields: '{{ .Site.Params.comments.waline.requiredFields }}',
+      dark: 'auto', // 自动主题切换
+    });
+  </script>
+{{ end }}

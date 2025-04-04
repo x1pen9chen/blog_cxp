@@ -1,0 +1,29 @@
+{{- /* Comments area start */ -}}
+{{- /* to add comments read => https://gohugo.io/content-management/comments/ */ -}}
+{{- /* Comments area end */ -}}
+
+{{ if eq .Site.Params.comments.provider "giscus" }}
+  <div class="giscus-comments">
+    <script src="https://giscus.app/client.js"
+      data-repo="{{ .Site.Params.giscus.repo }}"
+      data-repo-id="{{ .Site.Params.giscus.repoId }}"
+      data-category="{{ .Site.Params.giscus.category }}"
+      data-category-id="{{ .Site.Params.giscus.categoryId }}"
+      data-mapping="{{ default "pathname" .Site.Params.giscus.mapping }}"
+      data-strict="{{ default "1" .Site.Params.giscus.strict }}"
+      data-reactions-enabled="{{ default "1" .Site.Params.giscus.reactions }}"
+      data-emit-metadata="{{ default "0" .Site.Params.giscus.metadata }}"
+      data-input-position="{{ default "bottom" .Site.Params.giscus.inputPosition }}"
+      data-theme="{{ default "preferred_color_scheme" .Site.Params.giscus.theme }}"
+      data-lang="{{ default "en" .Site.Params.giscus.lang }}"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+{{ end }}
+
+{{ if eq .Site.Params.comments.provider "giscus" }}
+  <div class="giscus-comments">
+    {{ partial "comments/giscus" . }}
+  </div>
+{{ end }}

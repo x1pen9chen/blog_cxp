@@ -59,12 +59,11 @@
               event.preventDefault();
               if(audioPath) {
                 const audio = new Audio(audioPath);
-                audio.volume = 0.3;
+                audio.volume = 0.5;
                 audio.play().catch(e => console.log("Audio blocked:", e));
-                localStorage.setItem('pendingMusic', audioPath);
               }
               if(targetUrl) {
-                setTimeout(() => window.location.href = targetUrl,0)
+                setTimeout(() => window.location.href = targetUrl,2000)
               }
             }
         </script>
